@@ -1,0 +1,85 @@
+package com.sergio.bookstore.domain;
+
+import java.io.Serializable;
+
+
+import java.util.Objects;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+@Entity
+public class Livro  implements Serializable{
+	
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	// variaveis
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
+	private String titulo;
+	private String nome_autor;
+	private String descricao;
+	private String texto;
+	
+	@ManyToOne
+	@JoinColumn(name = "categoria_id")
+	private Categoria categoria;
+	
+	
+	
+	
+	// contrutor da super classe
+	public Livro() {
+		super();
+		// TODO Auto-generated constructor stub
+		}
+	
+	// contrutor da super classe
+	public Livro(Integer id, String titulo, String nome_autor, String descricao, String texto, Categoria categoria) {
+		super();
+		this.id = id;
+		this.titulo = titulo;
+		this.nome_autor = nome_autor;
+		this.descricao = descricao;
+		this.texto = texto;
+		this.categoria = categoria;
+	}
+	
+	
+	// gets e setters
+
+	
+	
+	
+	
+	
+	// hash code apenas pelo id
+	@Override
+	public int hashCode() {
+		return Objects.hash(id);
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Livro other = (Livro) obj;
+		return Objects.equals(id, other.id);
+	}
+	
+	
+	
+
+}

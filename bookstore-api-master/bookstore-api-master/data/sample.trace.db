@@ -1,0 +1,3 @@
+2022-09-21 18:15:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "LIVRO" not found; SQL statement:
+insert into livro (id, categoria_id, nome_autor, texto, titulo) values (null, ?, ?, ?, ?) [42102-200]
