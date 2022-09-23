@@ -1,0 +1,5 @@
+package com.sergio.bookstore.resource;
+
+public class CategoriaResource {
+
+}
