@@ -1,0 +1,5 @@
+package com.sergio.bookstore.service;
+
+public class DBService {
+
+}
