@@ -7,6 +7,11 @@ import org.springframework.context.annotation.Profile;
 
 import com.sergio.bookstore.service.DBService;
 
+
+
+//é uma configuração de perfis para escolher qual banco vai ser utilizado.
+
+
 @Configuration
 @Profile("test")
 public class TestConfig {

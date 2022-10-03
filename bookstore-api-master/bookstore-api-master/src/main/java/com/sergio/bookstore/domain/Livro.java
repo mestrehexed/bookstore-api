@@ -14,16 +14,16 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 
+/** Classe De declaração de Atributos e métodos 
 
+ */
 
 
 
 @Entity
 public class Livro implements Serializable {
 
-	/** Classe De declaração de Atributos e métodos 
-	 
-	 */
+
 	private static final long serialVersionUID = 1L;
 
 	// variaveis

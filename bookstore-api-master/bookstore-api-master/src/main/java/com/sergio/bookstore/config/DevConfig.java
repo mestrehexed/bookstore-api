@@ -8,12 +8,19 @@ import org.springframework.context.annotation.Profile;
 
 import com.sergio.bookstore.service.DBService;
 
+
+// é uma configuração de perfis para escolher qual banco vai ser utilizado.
+
+
 @Configuration
 @Profile("dev")
 public class DevConfig {
-
+	
+	//acessar um objeto de outra classe
 	@Autowired
 	private DBService dbservice;
+	
+	
 	@Value("${spring.jpa.hibernate.ddl-auto}")
 	private String strategy;
 
