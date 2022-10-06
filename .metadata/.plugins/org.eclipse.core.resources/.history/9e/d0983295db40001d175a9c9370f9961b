@@ -1,0 +1,5 @@
+package com.sergio.bookstore.dtos;
+
+public class CategoriaDTO {
+
+}
