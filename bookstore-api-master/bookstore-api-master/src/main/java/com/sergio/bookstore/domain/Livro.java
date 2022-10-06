@@ -10,19 +10,19 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotEmpty;
+
+import org.hibernate.validator.constraints.Length;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-
-
-/** Classe De declaração de Atributos e métodos 
-
+/**
+ * Classe De declaração de Atributos e métodos
+ * 
  */
-
-
 
 @Entity
 public class Livro implements Serializable {
-
 
 	private static final long serialVersionUID = 1L;
 
@@ -30,11 +30,20 @@ public class Livro implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+
+	@NotEmpty(message = "Nome titulo é requerido")
+	@Length(min = 3, max = 50, message = "Min 3 até 50 caracteres")
 	private String titulo;
+
+	@NotEmpty(message = "Nome autor é requerido")
+	@Length(min = 3, max = 50, message = "Min 3 até 50 caracteres")
 	private String nome_autor;
+
+	@NotEmpty(message = "Nome texto é requerido")
+	@Length(min = 8,max = 2000000,message = "minimo 8 até o infinito.")
 	private String texto;
 
-	@JsonIgnore //utilizado para n ficar repetindo dados da tabela.
+	@JsonIgnore // utilizado para n ficar repetindo dados da tabela.
 	@ManyToOne
 	@JoinColumn(name = "categoria_id")
 	private Categoria categoria;
