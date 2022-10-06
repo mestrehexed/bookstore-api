@@ -32,6 +32,7 @@ public class Categoria implements Serializable {
 	@Length(min = 3 ,max = 100, message = "nome entre 3 até 100 caracteres")
 	@NotEmpty(message = "Campo nome Requerido!")
 	private String nome;
+	@NotEmpty(message = "Campo descricao é Requerido!")
 	private String descricao;
 
 	@OneToMany(mappedBy = "categoria")

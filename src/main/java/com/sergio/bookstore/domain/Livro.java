@@ -31,11 +31,11 @@ public class Livro implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
-	@NotEmpty(message = "Nome titulo é requerido")
+	@NotEmpty(message = " titulo é requerido")
 	@Length(min = 3, max = 50, message = "Min 3 até 50 caracteres")
 	private String titulo;
 
-	@NotEmpty(message = "Nome autor é requerido")
+	@NotEmpty(message = "Nome_ autor é requerido")
 	@Length(min = 3, max = 50, message = "Min 3 até 50 caracteres")
 	private String nome_autor;
 
