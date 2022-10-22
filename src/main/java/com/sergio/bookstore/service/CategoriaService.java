@@ -37,27 +37,17 @@ public class CategoriaService {
 		return repository.findAll();
 	}
 
+	
 	// testando metodos
 
-	public Categoria create(Categoria obj, URI uri2) {
+	public Categoria create(Categoria obj) {
 
-		String obj2 = uri2.toString();
-		String obj3 = obj.getNome().toString();
-
-		// -------------------------------
-
-		if (obj2.equals(obj3)) {
-			obj.setId(null);
-			
-		} else {
-
-			obj.setId(null);
-			return repository.save(obj);
-
-		}
-		return null;
+		obj.setId(null);
+		return repository.save(obj);
 
 	}
+	
+	
 
 	public Categoria update(Integer id, CategoriaDTO objDto) {
 		Categoria obj = findById(id);
