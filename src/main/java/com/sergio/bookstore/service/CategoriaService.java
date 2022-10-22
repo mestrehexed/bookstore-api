@@ -1,5 +1,6 @@
 package com.sergio.bookstore.service;
 
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -38,27 +39,22 @@ public class CategoriaService {
 
 	// testando metodos
 
-	public Categoria create(Categoria obj) {
-		
-		Integer id = null;
-		
-		Categoria obj2 = findById(id);
-		
-		
-		
-		//-------------------------------
-		
-		if(obj2.getNome().equals(obj.getNome())) {
+	public Categoria create(Categoria obj, URI uri2) {
+
+		String obj2 = uri2.toString();
+		String obj3 = obj.getNome().toString();
+
+		// -------------------------------
+
+		if (obj2.equals(obj3)) {
 			obj.setId(null);
-			return null;
-		}else {
 			
+		} else {
 
 			obj.setId(null);
 			return repository.save(obj);
-			
-		}
 
+		}
 
 	}
 
