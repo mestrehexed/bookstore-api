@@ -45,17 +45,17 @@ public class CategoriaService {
 		
 	
 		
-		if((obj.getNome())==(obj.getNome())) {
+	//	if((obj.getNome())==(obj.getNome())) {
 		
-		 return null;
+	//	 return null;
 		 
-		}else {
+	//	}else {
 		
 		obj.setId(null);
 		return repository.save(obj);
 		
 		}
-	}
+//	}
 	
 	
 	
