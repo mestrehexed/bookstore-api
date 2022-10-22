@@ -1,5 +1,7 @@
 package com.sergio.bookstore.service;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,46 +23,41 @@ public class CategoriaService {
 	@Autowired
 	private CategoriaRepository repository;
 
-	
-	
 	public Categoria findById(Integer id) {
 
 		Optional<Categoria> obj = repository.findById(id);
 
-		return obj.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado!" + "  " + "id:" + id + ", Tipo:" + "" + Categoria.class.getName()));
+		return obj.orElseThrow(() -> new ObjectNotFoundException(
+				"Objeto não encontrado!" + "  " + "id:" + id + ", Tipo:" + "" + Categoria.class.getName()));
 
 	}
-	
 
 	public List<Categoria> findAll() {
 		return repository.findAll();
 	}
-	
-	
-	
 
 	// testando metodos
-	
+
 	public Categoria create(Categoria obj) {
-		
-	
-		
-	//	if((obj.getNome())==(obj.getNome())) {
-		
-	//	 return null;
-		 
-	//	}else {
-		
-		obj.setId(null);
-		return repository.save(obj);
-		
+
+		List<Categoria> lista = new ArrayList<>();
+
+		for (Categoria encontra_palavra : lista) {
+
+			if (encontra_palavra.equals(obj)) {
+
+				return null;
+			} else {
+
+				obj.setId(null);
+				return repository.save(obj);
+
+			}
+
 		}
-//	}
-	
-	
-	
-	
-	
+		return null;
+
+	}
 
 	public Categoria update(Integer id, CategoriaDTO objDto) {
 		Categoria obj = findById(id);
