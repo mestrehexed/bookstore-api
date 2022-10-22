@@ -69,7 +69,7 @@ public class CategoriaResource {
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId()).toUri();
 		URI uri2 = ServletUriComponentsBuilder.fromCurrentRequest().path("/{nome}").buildAndExpand(obj.getNome()).toUri();
 
-		if(uri2.equals(obj)) {
+		if(uri2.equals(obj.getNome())) { 
 			return null;
 		}
 		
