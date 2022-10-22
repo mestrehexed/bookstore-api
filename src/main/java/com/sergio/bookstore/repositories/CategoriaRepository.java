@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.sergio.bookstore.domain.Categoria;
 
 /**
- * Classe De configuração Repositórios
+ * Classe De configuração Repositórios 
  * 
  */
 

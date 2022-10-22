@@ -19,7 +19,7 @@ import org.hibernate.validator.constraints.Length;
 @Entity
 public class Categoria implements Serializable {
 
-	/** Classe De declaração de Atributos e métodos 
+	/** Classe De declaração de Atributos e métodos os Famosos Objetos
 	 
 	 */
 	private static final long serialVersionUID = 1L;
@@ -30,9 +30,9 @@ public class Categoria implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	@Length(min = 3 ,max = 100, message = "nome entre 3 até 100 caracteres")
-	@NotEmpty(message = "Campo nome Requerido!")
+	@NotEmpty(message = "O Campo nome Requerido!")
 	private String nome;
-	@NotEmpty(message = "Campo descricao é Requerido!")
+	@NotEmpty(message = "O Campo descricao é Requerido!")
 	private String descricao;
 
 	@OneToMany(mappedBy = "categoria")

@@ -1,6 +1,7 @@
 package com.sergio.bookstore.Resource;
 
 import java.net.URI;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -22,6 +23,14 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import com.sergio.bookstore.domain.Categoria;
 import com.sergio.bookstore.dtos.CategoriaDTO;
 import com.sergio.bookstore.service.CategoriaService;
+
+
+
+
+
+// O @rest Controller da CategoriaResource é utilizado para enviar resposta ao corpo do projeto.
+
+
 @CrossOrigin("*")
 @RestController
 @RequestMapping(value = "/Categorias")
@@ -30,12 +39,16 @@ public class CategoriaResource {
 	@Autowired
 	private CategoriaService service;
 
+	
+	
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Categoria> findByid(@PathVariable Integer id) {
 
 		Categoria obj = service.findById(id);
 		return ResponseEntity.ok().body(obj);
 	}
+	
+	
 
 	@GetMapping
 	public ResponseEntity<List<CategoriaDTO>> findAll() {

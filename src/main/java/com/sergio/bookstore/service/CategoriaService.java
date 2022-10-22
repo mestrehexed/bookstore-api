@@ -12,6 +12,8 @@ import com.sergio.bookstore.dtos.CategoriaDTO;
 import com.sergio.bookstore.repositories.CategoriaRepository;
 import com.sergio.bookstore.service.exceptions.ObjectNotFoundException;
 
+// @service é utilizado para salvar,atualizar,excluir ou adicionar um objeto, resumindo Manipulação do banco de dados.
+
 @Service
 public class CategoriaService {
 
@@ -19,9 +21,10 @@ public class CategoriaService {
 	private CategoriaRepository repository;
 
 	public Categoria findById(Integer id) {
+
 		Optional<Categoria> obj = repository.findById(id);
-		return obj.orElseThrow(() -> new ObjectNotFoundException(
-				"Objeto não encontrado!" + "  " + "id:" + id + ", Tipo:" + "" + Categoria.class.getName()));
+
+		return obj.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado!" + "  " + "id:" + id + ", Tipo:" + "" + Categoria.class.getName()));
 
 	}
 
@@ -29,7 +32,16 @@ public class CategoriaService {
 		return repository.findAll();
 	}
 
-	public Categoria create(Categoria obj) {
+	public Categoria create(Categoria obj,Integer id) {
+		
+		
+		
+		if(obj.equals(obj)) {
+			
+			Optional<Categoria> obj2 = repository.findById(id);
+			return obj2.orElseThrow(() -> new ObjectNotFoundException("Esse nome já existe!"+""+Categoria.class.getName()));
+		}
+		
 		obj.setId(null);
 		return repository.save(obj);
 	}
@@ -49,7 +61,7 @@ public class CategoriaService {
 			repository.deleteById(id);
 		} catch (DataIntegrityViolationException e) {
 			throw new com.sergio.bookstore.service.exceptions.DataIntegrityViolationException(
-					"Categoria não pode ser deletado! Possue livros associados.");
+					"Categoria não pode ser deletado! Possui livros associados.");
 		}
 
 	}
