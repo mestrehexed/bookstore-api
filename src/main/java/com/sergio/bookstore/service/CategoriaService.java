@@ -40,7 +40,7 @@ public class CategoriaService {
 
 	public Categoria create(Categoria obj) {
 
-	if(obj.equals(obj)) {
+	if(obj.getNome().equals(obj.getNome())) {
 		
 		
 		
