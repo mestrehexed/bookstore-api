@@ -24,12 +24,7 @@ import com.sergio.bookstore.domain.Categoria;
 import com.sergio.bookstore.dtos.CategoriaDTO;
 import com.sergio.bookstore.service.CategoriaService;
 
-
-
-
-
 // O @rest Controller da CategoriaResource é utilizado para enviar resposta ao corpo do projeto.
-
 
 @CrossOrigin("*")
 @RestController
@@ -39,16 +34,12 @@ public class CategoriaResource {
 	@Autowired
 	private CategoriaService service;
 
-	
-	
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Categoria> findByid(@PathVariable Integer id) {
 
 		Categoria obj = service.findById(id);
 		return ResponseEntity.ok().body(obj);
 	}
-	
-	
 
 	@GetMapping
 	public ResponseEntity<List<CategoriaDTO>> findAll() {
@@ -58,28 +49,19 @@ public class CategoriaResource {
 
 		return ResponseEntity.ok().body(listDTO);
 	}
-	
-	
-	
 
+	
+	
+	
 	@PostMapping
-	public ResponseEntity<Categoria> create(@Valid @RequestBody Categoria obj) {
+	public ResponseEntity<Categoria> create(@Valid @RequestBody Categoria obj, Integer id) {
 
-		obj = service.create(obj);
+		obj = service.create(obj, id);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId()).toUri();
-		URI uri2 = ServletUriComponentsBuilder.fromCurrentRequest().path("/{nome}").buildAndExpand(obj.getNome()).toUri();
 
-		if(uri2.equals(obj.getNome())) { 
-			return null;
-		}
-		
-		
-		
 		return ResponseEntity.created(uri).build();
 	}
 
-	
-	
 	
 	
 	

@@ -38,10 +38,22 @@ public class CategoriaService {
 
 	// testando metodos
 
-	public Categoria create(Categoria obj) {
+	public Categoria create(Categoria obj, Integer id) {
+		Categoria obj2 = findById(id);
+		String objdois=null;
+		objdois=obj2.getNome();
+		
+		if(objdois.equals(obj.getNome())) {
+			obj.setId(null);
+			return null;
+		}else {
+			
 
-		obj.setId(null);
-		return repository.save(obj);
+			obj.setId(null);
+			return repository.save(obj);
+			
+		}
+
 
 	}
 
