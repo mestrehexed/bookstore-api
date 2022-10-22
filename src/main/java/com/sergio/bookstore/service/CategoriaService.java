@@ -3,6 +3,7 @@ package com.sergio.bookstore.service;
 import java.util.List;
 import java.util.Optional;
 
+import org.aspectj.bridge.Message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
@@ -40,17 +41,19 @@ public class CategoriaService {
 
 	// testando metodos
 	
-	public Categoria create(Categoria obj, Integer id) {
+	public Categoria create(Categoria obj) {
+		
+	
 		
 		if((obj.getNome())==(obj.getNome())) {
-			
-			Optional<Categoria> obj2 = repository.findById(id);
-			return obj2.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado!"+""+ Categoria.class.getName()));
-		}else {
 		
+		 return null;
+		 
+		}else {
 		
 		obj.setId(null);
 		return repository.save(obj);
+		
 		}
 	}
 	
