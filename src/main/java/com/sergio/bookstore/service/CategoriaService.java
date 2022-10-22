@@ -20,6 +20,8 @@ public class CategoriaService {
 	@Autowired
 	private CategoriaRepository repository;
 
+	
+	
 	public Categoria findById(Integer id) {
 
 		Optional<Categoria> obj = repository.findById(id);
@@ -27,24 +29,35 @@ public class CategoriaService {
 		return obj.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado!" + "  " + "id:" + id + ", Tipo:" + "" + Categoria.class.getName()));
 
 	}
+	
 
 	public List<Categoria> findAll() {
 		return repository.findAll();
 	}
+	
+	
+	
 
-	public Categoria create(Categoria obj,Integer id) {
+	// testando metodos
+	
+	public Categoria create(Categoria obj, Integer id) {
 		
-		
-		
-		if(obj.equals(obj)) {
+		if((obj.getNome())==(obj.getNome())) {
 			
 			Optional<Categoria> obj2 = repository.findById(id);
-			return obj2.orElseThrow(() -> new ObjectNotFoundException("Esse nome já existe!"+""+Categoria.class.getName()));
-		}
+			return obj2.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado!"+""+ Categoria.class.getName()));
+		}else {
+		
 		
 		obj.setId(null);
 		return repository.save(obj);
+		}
 	}
+	
+	
+	
+	
+	
 
 	public Categoria update(Integer id, CategoriaDTO objDto) {
 		Categoria obj = findById(id);
