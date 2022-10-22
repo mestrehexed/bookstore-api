@@ -40,11 +40,11 @@ public class CategoriaService {
 
 	public Categoria create(Categoria obj) {
 
-		List<Categoria> lista = new ArrayList<>();
+		List<CategoriaRepository> obj2 = new ArrayList<>();
 
-		for (Categoria encontra_palavra : lista) {
+		for ( CategoriaRepository palavra : obj2) {
 
-			if (encontra_palavra.equals(obj)) {
+			if (palavra.equals(obj)) {
 
 				return null;
 			} else {
