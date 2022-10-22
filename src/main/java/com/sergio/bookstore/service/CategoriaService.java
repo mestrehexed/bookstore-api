@@ -40,22 +40,17 @@ public class CategoriaService {
 
 	public Categoria create(Categoria obj) {
 
-		List<CategoriaRepository> obj2 = new ArrayList<>();
-
-		for ( CategoriaRepository palavra : obj2) {
-
-			if (palavra.equals(obj)) {
-
-				return null;
-			} else {
-
-				obj.setId(null);
-				return repository.save(obj);
-
-			}
-
-		}
-		return null;
+	if(obj.equals(obj)) {
+		
+		
+		
+	}else {
+		obj.setId(null);
+		return repository.save(obj);
+	}
+				
+	
+	return null;
 
 	}
 
