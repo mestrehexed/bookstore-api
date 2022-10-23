@@ -3,11 +3,13 @@ package com.sergio.bookstore.Resource;
 import java.net.URI;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -50,6 +52,13 @@ public class CategoriaResource {
 		return ResponseEntity.ok().body(listDTO);
 	}
 
+	
+	
+		
+	
+	
+	
+	
 	@PostMapping
 	public ResponseEntity<Categoria> create(@Valid @RequestBody Categoria obj) {
 
@@ -59,6 +68,9 @@ public class CategoriaResource {
 
 	}
 
+	
+	
+	
 	@PutMapping(value = "/{id}")
 	public ResponseEntity<CategoriaDTO> update(@PathVariable Integer id, @Valid @RequestBody CategoriaDTO objDto) {
 
