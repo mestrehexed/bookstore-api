@@ -39,10 +39,10 @@ public class CategoriaService {
 
 	// testando metodos
 
-	public Categoria create(Categoria obj,String palavra) {
+	public Categoria create(Categoria obj) {
 		
-		if(repository.pesquisar(palavra).equals(obj.getNome())) {
-			System.out.println(palavra);
+		if(repository.pesquisar(obj).equals(obj)) {
+			
 		obj.setId(null);
 		return null;
 		
