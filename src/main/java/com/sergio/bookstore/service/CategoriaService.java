@@ -40,17 +40,11 @@ public class CategoriaService {
 	// testando metodos
 
 	public Categoria create(Categoria obj) {
-		
-		if(repository.pesquisar(obj.getNome()).equals(obj.getNome())) {
-			
-		obj.setId(null);
-		return null;
-		
-		}else {
+	
 
 		obj.setId(null);
 		return repository.save(obj);
-		}
+		
 	}
 
 	public Categoria update(Integer id, CategoriaDTO objDto) {
