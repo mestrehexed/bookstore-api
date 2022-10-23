@@ -17,7 +17,7 @@ import com.sergio.bookstore.domain.Categoria;
 public interface CategoriaRepository extends JpaRepository<Categoria, Integer> {
 
 	@Query(value = "SELECT * FROM `categoria` ORDER BY `categoria`.`nome` ASC", nativeQuery=true)
-	public List<Categoria> pesquisar(Categoria obj);
+	public List<Categoria> pesquisar(String string);
 	
 	
 	

@@ -41,7 +41,7 @@ public class CategoriaService {
 
 	public Categoria create(Categoria obj) {
 		
-		if(repository.pesquisar(obj).equals(obj)) {
+		if(repository.pesquisar(obj.getNome()).equals(obj.getNome())) {
 			
 		obj.setId(null);
 		return null;

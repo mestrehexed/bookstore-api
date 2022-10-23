@@ -52,13 +52,6 @@ public class CategoriaResource {
 		return ResponseEntity.ok().body(listDTO);
 	}
 
-	
-	
-		
-	
-	
-	
-	
 	@PostMapping
 	public ResponseEntity<Categoria> create(@Valid @RequestBody Categoria obj) {
 
@@ -68,9 +61,6 @@ public class CategoriaResource {
 
 	}
 
-	
-	
-	
 	@PutMapping(value = "/{id}")
 	public ResponseEntity<CategoriaDTO> update(@PathVariable Integer id, @Valid @RequestBody CategoriaDTO objDto) {
 
