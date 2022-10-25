@@ -26,6 +26,15 @@ public class DBService {
 		Categoria cat2 = new Categoria(null, "infor2", "Livros 2");
 		Categoria cat3= new Categoria(null, "infor3", "Livros 3");
 		Categoria cat4 = new Categoria(null, "infor4", "Livros 4");
+		
+		this.categoriaRepository.saveAll(Arrays.asList(cat1));
+		this.categoriaRepository.saveAll(Arrays.asList(cat2));
+		this.categoriaRepository.saveAll(Arrays.asList(cat3));
+		this.categoriaRepository.saveAll(Arrays.asList(cat4));
+		
+		
+		
+		
 		// instanciou o objeto Livro e relacionou ao final a categoria "Cat1"
 		Livro livro = new Livro(null, "clean code", "Robert martin", "Loren Y", "usuario1", cat1);
 		Livro livro2 = new Livro(null, "clean 2", "Robert 2", "Loren 2", "usuario2", cat2);
@@ -39,10 +48,7 @@ public class DBService {
 		cat3.getLivro().addAll(Arrays.asList(livro));
 		cat4.getLivro().addAll(Arrays.asList(livro));
 
-		this.categoriaRepository.saveAll(Arrays.asList(cat1));
-		this.categoriaRepository.saveAll(Arrays.asList(cat2));
-		this.categoriaRepository.saveAll(Arrays.asList(cat3));
-		this.categoriaRepository.saveAll(Arrays.asList(cat4));
+		
 
 		this.livroRepository.saveAll(Arrays.asList(livro));
 		this.livroRepository.saveAll(Arrays.asList(livro2));
