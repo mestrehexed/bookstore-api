@@ -40,11 +40,11 @@ public class CategoriaService {
 	// testando metodos
 
 	public Categoria create(Categoria obj) {
-		
+
 		List<Categoria> list = repository.pesquisar(obj.getNome());
-	
-		for (Categoria categoria : list) {
-			if (categoria.getNome().equals(obj.getNome())) {
+
+		for (Categoria c : list) {
+			if (c.getNome().equals(obj.getNome())) {
 				return null;
 			}
 		}
