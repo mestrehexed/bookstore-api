@@ -30,7 +30,7 @@ import com.sergio.bookstore.service.CategoriaService;
 
 @CrossOrigin("*")
 @RestController
-@RequestMapping(value = "/Categorias")
+@RequestMapping(value = "/categorias")
 public class CategoriaResource {
 
 	@Autowired
