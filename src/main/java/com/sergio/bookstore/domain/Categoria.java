@@ -32,6 +32,7 @@ public class Categoria implements Serializable {
 	@Length(min = 3 ,max = 100, message = "nome entre 3 até 100 caracteres")
 	@NotEmpty(message = "O Campo nome Requerido!")
 	private String nome;
+	@Length(min = 3 ,max = 100, message = "descrição entre 3 até 100 caracteres")
 	@NotEmpty(message = "O Campo descricao é Requerido!")
 	private String descricao;
 

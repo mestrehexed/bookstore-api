@@ -32,15 +32,15 @@ public class Livro implements Serializable {
 	private Integer id;
 
 	@NotEmpty(message = " titulo é requerido")
-	@Length(min = 3, max = 50, message = "Min 3 até 50 caracteres")
+	@Length(min = 3, max = 50, message = " Titulo é no minimo de 3 até 50 caracteres")
 	private String titulo;
 
-	@NotEmpty(message = "Nome_ autor é requerido")
-	@Length(min = 3, max = 50, message = "Min 3 até 50 caracteres")
+	@NotEmpty(message = "Nome autor é requerido")
+	@Length(min = 3, max = 50, message = "Nome Autor é no minimo de  3 até 50 caracteres")
 	private String nome_autor;
 
 	@NotEmpty(message = "Nome texto é requerido")
-	@Length(min = 8,max = 2000000,message = "minimo 8 até o infinito.")
+	@Length(min = 8,max = 2000000,message = "texto tem o minimo 8  caracteres até o infinito.")
 	private String texto;
 
 	@JsonIgnore // utilizado para n ficar repetindo dados da tabela.
