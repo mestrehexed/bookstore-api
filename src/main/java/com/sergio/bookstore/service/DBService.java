@@ -22,38 +22,36 @@ public class DBService {
 	public void instanciaBaseDeDados() {
 
 		// instanciou o objeto categoria
-		Categoria cat1 = new Categoria(null, "informática", "Livros de TI");
-		Categoria cat2 = new Categoria(null, "infor2", "Livros 2");
-		Categoria cat3= new Categoria(null, "infor3", "Livros 3");
-		Categoria cat4 = new Categoria(null, "infor4", "Livros 4");
-		
-		this.categoriaRepository.saveAll(Arrays.asList(cat1));
-		this.categoriaRepository.saveAll(Arrays.asList(cat2));
-		this.categoriaRepository.saveAll(Arrays.asList(cat3));
-		this.categoriaRepository.saveAll(Arrays.asList(cat4));
-		
-		
-		
+		Categoria cat1 = new Categoria(null, "Fantasia", "Conto de Fadas");
+	
+		// salvando uma categoria
+		 this.categoriaRepository.saveAll(Arrays.asList(cat1));
+			
 		
 		// instanciou o objeto Livro e relacionou ao final a categoria "Cat1"
-		Livro livro = new Livro(null, "clean code", "Robert martin", "Loren Y", "usuario1", cat1);
-		Livro livro2 = new Livro(null, "clean 2", "Robert 2", "Loren 2", "usuario2", cat2);
-		Livro livro3 = new Livro(null, "clean 3", "Robert 3", "Loren 3", "usuario3", cat3);
-		Livro livro4 = new Livro(null, "clean 4", "Robert 4", "Loren 4", "usuario4", cat4);
+		Livro livro = new Livro(null,"","Conto de Fadas","Stephen King","Descrição do livro\n"
+				+ "Aos dezessete anos de idade, Charlie Reade parece ser um garoto comum: pratica esportes, é um filho atencioso e aluno de desempenho razoável. Suas lembranças, entretanto, não são feitas apenas de momentos felizes. Após perder a mãe em um grave acidente quando tinha apenas dez anos, Charlie precisou aprender a cuidar de si e do pai, que, enlutado com a perda da esposa, buscou refúgio na bebida.\n"
+				+ "Certo dia, ao pedalar pela rua de casa, Charlie atende um pedido de socorro vindo do quintal de um dos vizinhos: Howard Bowditch. O homem recluso e rabugento, que amedrontava as crianças do bairro, cai de uma escada e se machuca gravemente. O chamado por ajuda veio de Radar, a fiel pastor alemão , tão idosa quanto seu dono.\n"
+				+ "Enquanto Bowditch se recupera, Charlie passa a ajudar o vizinho com tarefas domésticas e com o cuidado de Radar, e assim o rapaz faz duas grandes amizades. Quando Howard morre, Charlie se depara com uma fita cassete que revela um segredo inimaginável: um portal para outro mundo.\n"
+				+ "\n"
+				+ "“Cidades devastadas, disputas políticas e clima de incerteza fazem desta uma grandiosa, e naturalmente estranha, obra de entretenimento.” ― Kirkus\n"
+				+ "\n"
+				+ "“Muitos escritores narram os fatos como eles são, mas poucos conseguem, com tanto empenho e intensidade, contá-los como eles não são. King usa o que há de estranho e dá corpo a isso. E, ao mesmo tempo, seus romances conservam muita leveza e jovialidade. Eles nos mostram coisas horríveis, mas também refletem a alegria de King ― com o prazer e a satisfação que ele tem em imaginar.” ― The New Yorker\n"
+				+ "\n"
+				+ "Charlie começa a fazer trabalhos para o Sr. Bowditch e perde seu coração para Radar. Então, quando Bowditch morre, ele deixa uma fita cassete para Charlie contando uma história que ninguém acreditaria. O que Bowditch sabe, e manteve em segredo durante toda a sua vida, é que dentro do galpão há um portal para outro mundo.\n"
+				+ "\n"
+				+ "A narrativa de King em Fairy Tale dispara. Este é um conto magnífico e aterrorizante sobre outro mundo que não o nosso, no qual o bem é colocado contra o mal avassalador, e um menino heróico – e seu cachorro – deve liderar a batalha.",cat1);
+		
 		
 
 		// aqui o categoria instanciou um livro.
 		cat1.getLivro().addAll(Arrays.asList(livro));
-		cat2.getLivro().addAll(Arrays.asList(livro));
-		cat3.getLivro().addAll(Arrays.asList(livro));
-		cat4.getLivro().addAll(Arrays.asList(livro));
+		
 
 		
 
 		this.livroRepository.saveAll(Arrays.asList(livro));
-		this.livroRepository.saveAll(Arrays.asList(livro2));
-		this.livroRepository.saveAll(Arrays.asList(livro3));
-		this.livroRepository.saveAll(Arrays.asList(livro4));
+		
 
 	}
 }
