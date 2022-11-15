@@ -22,7 +22,7 @@ public class DBService {
 	public void instanciaBaseDeDados() {
 
 		// instanciou o objeto categoria
-		Categoria cat1 = new Categoria(null, "Fantasia", "Conto de Fadas");
+		Categoria cat1 = new Categoria(null, "Conto de Fadas", "Fantasia");
 	
 		// salvando uma categoria
 		 this.categoriaRepository.saveAll(Arrays.asList(cat1));
