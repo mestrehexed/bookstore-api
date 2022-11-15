@@ -29,7 +29,8 @@ public class DBService {
 			
 		
 		// instanciou o objeto Livro e relacionou ao final a categoria "Cat1"
-		Livro livro = new Livro(null,"","Conto de Fadas","Stephen King","Descrição do livro\n"
+		Livro livro = new Livro(null,"","Conto de Fadas","Stephen King","usuario1"
+				+ "Descrição do livro\n"
 				+ "Aos dezessete anos de idade, Charlie Reade parece ser um garoto comum: pratica esportes, é um filho atencioso e aluno de desempenho razoável. Suas lembranças, entretanto, não são feitas apenas de momentos felizes. Após perder a mãe em um grave acidente quando tinha apenas dez anos, Charlie precisou aprender a cuidar de si e do pai, que, enlutado com a perda da esposa, buscou refúgio na bebida.\n"
 				+ "Certo dia, ao pedalar pela rua de casa, Charlie atende um pedido de socorro vindo do quintal de um dos vizinhos: Howard Bowditch. O homem recluso e rabugento, que amedrontava as crianças do bairro, cai de uma escada e se machuca gravemente. O chamado por ajuda veio de Radar, a fiel pastor alemão , tão idosa quanto seu dono.\n"
 				+ "Enquanto Bowditch se recupera, Charlie passa a ajudar o vizinho com tarefas domésticas e com o cuidado de Radar, e assim o rapaz faz duas grandes amizades. Quando Howard morre, Charlie se depara com uma fita cassete que revela um segredo inimaginável: um portal para outro mundo.\n"
